@@ -1,11 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { carmichaelFunction } from '../src';
-// import {} from 'jest';
 
-const testData: { input: number; expected: number }[] = [
-  { input: 154169, expected: 73722 },
-];
+const testData: { input: number; expected: number }[] = [];
 const dataString = fs.readFileSync(
   path.join(__dirname, 'carmichaelTestData.txt')
 );
@@ -23,7 +20,6 @@ lines.forEach((line, lineIdx) => {
     }
   });
 });
-console.log(testData);
 
 testData.forEach((data) => {
   test(`tries ${data.input} in carmichaelFunction`, () => {
